@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Teste backend seguro</h2>
+
+<button onclick="testar()">Testar</button>
+
+<pre id="res"></pre>
+
+<script>
+async function testar() {
+  const res = document.getElementById("res");
+  res.innerText = "Testando...";
+
+  try {
+    const r = await fetch("/.netlify/functions/balance");
+    const txt = await r.text();
+    res.innerText = txt;
+  } catch (e) {
+    res.innerText = "Erro: " + e.message;
+  }
+}
+</script>
+
+</body>
+</html>
