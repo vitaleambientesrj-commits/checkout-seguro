@@ -1,6 +1,6 @@
 export default async (request) => {
   try {
-    const secret = Netlify.env.get("HYPERCASH_SECRET_KEY");
+    const secret = Netlify.env.get("sk_6d60f27eb8ae7058f15c01261f4e3feea7d1f315");
 
     if (!secret) {
       return new Response(JSON.stringify({ erro: "Chave secreta não configurada" }), {
